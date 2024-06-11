@@ -1,0 +1,12 @@
+---
+
+- name : create a file.txt
+  hosts: all
+  become: true  
+  tasks: 
+    - name: this is task from imported playbook
+      file:
+        path: /home/ubuntu/directory/new.txt
+        state: touch
+        mode: 0777
+      tags: import-only  

@@ -1,0 +1,23 @@
+#debug is used to print value
+
+- name: test the debug mdule
+  hosts: localhost
+  become: true
+  vars:
+    - my_variable: "set"
+    - user: "prathmesh"
+
+  tasks:
+    - name: print a message using condition
+      debug:
+        msg: "my name is {{ user }} "
+      when: my_variable == "set"
+
+    - name: print the variable value
+      debug:
+        var: my_variable
+
+    - name: just print the msg
+      debug:
+        msg: i have learned the debug module
+        

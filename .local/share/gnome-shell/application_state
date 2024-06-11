@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="firefox.desktop" score="8530" last-seen="1717508899"/>
+    <application id="brave-browser.desktop" score="4200" last-seen="1718108673"/>
+    <application id="org.gnome.Terminal.desktop" score="24941.978515625" last-seen="1718108643"/>
+    <application id="org.gnome.gedit.desktop" score="5" last-seen="1717753828"/>
+  </context>
+</application-state>

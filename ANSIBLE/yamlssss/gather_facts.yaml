@@ -1,0 +1,38 @@
+---
+
+- name: Write a playbook that will run task OS specific only 
+  hosts: all
+  become: true
+  gather_facts: yes
+  vars:
+    - name: "prathmesh"
+
+  tasks:
+    - name: install httpd
+      apt:
+        name: apache2
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: start and enable httpd
+      service:
+        name: apache2
+        state: started
+        enabled: true
+      when: ansible_os_family == 'Debian'
+    
+    - name: print the os family name
+      debug:
+        msg: "the os belongs to {{ ansible_facts['os_family']}}" 
+
+    - name: set custom facts
+      set_fact:
+        my_name: "{{ name }} "
+        dream_company: "Microsoft"
+
+    - name: print custom facts
+      debug:
+        msg:
+          - "my name is : {{ my_name }} "
+          - "my dream company is : {{ dream_company }} "
+

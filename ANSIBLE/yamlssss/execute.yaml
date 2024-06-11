@@ -1,0 +1,7 @@
+---
+
+- name: import playbook and execute
+  hosts: all
+  become: true
+
+- import_playbook: create_file.yaml

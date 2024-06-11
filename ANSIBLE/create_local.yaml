@@ -1,0 +1,10 @@
+---
+- name: create a file in local machine
+  hosts: localhost
+  become: true
+  tasks:
+    - name: create
+      file:
+        path: /home/prathmesh/a.txt
+        state: touch
+
